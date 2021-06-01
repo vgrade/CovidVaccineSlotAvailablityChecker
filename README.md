@@ -1,5 +1,5 @@
- # Cowid Vaccine Slot Availablity Checker
- Powershell script to check cowid vaccine slot availablity in india using public apis of cowin portal
+ # Covid Vaccine Slot Availablity Checker
+ Powershell script to check covid vaccine slot availablity in india using public apis of cowin portal
 
  # How to SetUp
  1. Download the .ps file and edit it using any text editor.
