@@ -20,53 +20,54 @@
 
 # Setup these variables according to your need
 $DistrictCodes = 650,651   
-$MinAge=18                    # 18/45
+$MinAge=45                    # 18/45
 $VaccineName = "COVISHIELD"   # COVISHIELD/COVAXIN
 $DoseNo = "1"                 # 1/2
 $MinimumSlotes = 1            # Minimum no of slots needed together at a center
-
+$RetryAFter = 20              # No of seconds after which it'll retry searching vaccine          
 
 # Do not change anything after this unless you know powershell
 #Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 $DoseName="available_capacity_dose"+$DoseNo
 [bool]$flag1=0
 $MinimumSlotes =$MinimumSlotes - 1
-
+$Header ="PinCode  Date         Dose  Type   District              CenterName"
+$Message="Opened cowin portal. Please login and book your slot asap. List of centers with pin code is printed above."
+$MessageNOSlotsFound="`nNo slots Found, Will check after {0} seconds. Current Time = {1}"
+$MessaeSearching ="`n`nSearching for Minimum {0} slots of {1} dose no {2} for age group {3} in district code {4}"
 for(1)
 {
 clear
 $Today= Get-Date -Format "dd-MM-yyyy"
 foreach($DistrictCode in $DistrictCodes)
 {
-"`n`nSearching for Minimum "+ ($MinimumSlotes+1) +" slots of "+$VaccineName +" dose no "+$DoseNo +" for age group "+$MinAge +" in district code "+ $DistrictCode
-$URI1="https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id={0}&date={1}" -f $DistrictCode,$Today
-$Response = Invoke-WebRequest -URI $URI1
+$MessaeSearching -f ($MinimumSlotes+1),$VaccineName,$DoseNo,$MinAge,$DistrictCode
+$URI="https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id={0}&date={1}" -f $DistrictCode,$Today
+$Response = Invoke-WebRequest -URI $URI
 $Data = $Response.Content | ConvertFrom-Json
 
  
-  Foreach($center in $Data.centers)
+    Foreach($center in $Data.centers)
 	{
 		 Foreach($session in $center.sessions)
 		{
 		  if( ($session.$DoseName -gt $MinimumSlotes) -and ($session.vaccine -eq $VaccineName) -and ($session.min_age_limit -eq $MinAge))
 		  {
-			   if($flag1 -eq 0)
-			   {
-			   "PinCode  Date         Dose  Type   District              CenterName"
-			   }
-
-            $centerpincode=$center.pincode.ToString()
-            $Date =$session.date.ToString()
-            $centername =$center.name.ToString().PadRight(15,' ')
-            $DosesAvailable = $session.$DoseName.ToString().PadLeft(3,'0')
-            $centerfee_type =$center.fee_type.ToString()
-            $centerdistrict_name =$center.district_name.PadRight(15,' ')
-            $centerblock_name =$center.block_name.PadRight(15,' ')
-            $centeraddress =$center.address.PadRight(50,' ')
-            $centerdistrict_name=$center.district_name.ToString().PadRight(20,' ')
-
-            $centerpincode + "   " + $Date +"   " + $DosesAvailable +  "   "+ $centerfee_type + "   " +$centerdistrict_name+"  "+ $centername #+  "  District " + $centerdistrict_name  +"  Block "+ $centerblock_name + "   Address " + $centeraddress
-		    $flag1=1
+    		   if($flag1 -eq 0)
+    		   {
+    		    $Header
+    		   }
+                $centerpincode=$center.pincode.ToString()
+                $Date =$session.date.ToString()
+                $centername =$center.name.ToString().PadRight(15,' ')
+                $DosesAvailable = $session.$DoseName.ToString().PadLeft(3,'0')
+                $centerfee_type =$center.fee_type.ToString()
+                $centerdistrict_name =$center.district_name.PadRight(15,' ')
+                $centerblock_name =$center.block_name.PadRight(15,' ')
+                $centeraddress =$center.address.PadRight(50,' ')
+                $centerdistrict_name=$center.district_name.ToString().PadRight(20,' ')
+                $centerpincode + "   " + $Date +"   " + $DosesAvailable +  "   "+ $centerfee_type + "   " +$centerdistrict_name+"  "+ $centername
+    		    $flag1=1
 		  }
 		}
 	}
@@ -75,7 +76,7 @@ $Data = $Response.Content | ConvertFrom-Json
 	if($flag1)
 	{
 		[system.Diagnostics.Process]::Start("chrome","https://selfregistration.cowin.gov.in/")
-		"Opened cowin portal. Please login and book your slot asap. List of centers with pin code is printed above"
+		$Message
 		for(1)	
 		{
 		  [console]::beep(2000, 1000)
@@ -84,8 +85,8 @@ $Data = $Response.Content | ConvertFrom-Json
 	else
 	{
 	$time=Get-Date
-	"`nNo slots Found, Will check after 20 seconds. Current Time = {0}" -f $time 
-	Start-Sleep -s 20
+	$MessageNOSlotsFound -f $RetryAFter,$time 
+	Start-Sleep -s $RetryAFter
 	}
 
 }
