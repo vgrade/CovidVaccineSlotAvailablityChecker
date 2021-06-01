@@ -17,6 +17,9 @@
  6. Update Minimum Age in #MinAge variable on line no 3
  7. Update desired vaccine name in $vaccineName variable on line no 5
  8. Update desired vaccine dose no (eg : 1) on line no 5
+ 9. Optionally update the $MinimumSlotes variable if you are looking for minimum slots more than 1.
+ 9. Now save the script and open Windows powershell and paste the script in it and run. Alternatively, if running external powershell script is enabled on your computer, you can    just double click on the powershell file. 
+ 10.Once desired slots are found, this will print the pincode and deails of centers on powershell window, start beeping loudly (provided your computer's audio output is working correctly) and open cowin portal where you have to login and book slot manually. Search for vaccine on pin codes printed on powershell screen.
 
  Note
- 1. Once desired slots are found, this will print the pincode and deails of centers on powershell window, start beeping loudly (provided your computer's audio output is working correctly) and open cowin portal where you have to login and book slot manually. Search for vaccine on pin codes printed on powershell screen.
+ 1. API responses data from this script is not exactly real time and can be cached data which can be upto 30 minutes old asper cowin api specification. For more details, please refer: https://apisetu.gov.in/public/marketplace/api/cowin/cowin-public-v2
