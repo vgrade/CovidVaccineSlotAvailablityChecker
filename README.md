@@ -16,7 +16,7 @@
  10. Once desired slots are found, this will print the pincode and deails of centers on powershell window, start beeping loudly (provided your computer's audio output is 
  working correctly) and open cowin portal where you have to login and book slot manually. Search for vaccine on pin codes printed on powershell screen
 
- #Disclaimer
+ # Disclaimer
  1. Not for commercial usage, Do not abuse cowin api in any circumances as your ip address might get blocked
  2. Keep requests under prescribed limit of 100 calls per IP Address/5 mins.
  3. This is just for educational and personal use purpose. Any kind of harm or loss due to using this script will be solo responsibility of user
