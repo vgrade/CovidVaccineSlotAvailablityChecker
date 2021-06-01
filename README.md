@@ -3,8 +3,7 @@
 
  Warning
  1. Not for commercial usage, Do not abuse cowin api in any circumances as your ip address might get blocked
- 2. Keep requests under prescribed limit of 100 calls per IP Address/5 mins. This is important to understand that abusing cowin api might impact the performance of cowin portal 
-    and might attract legal action from govt so  users are advised to use this script sololy on their own descertion
+ 2. Keep requests under prescribed limit of 100 calls per IP Address/5 mins.
  3. This is just for educational and personal use purpose. Any kind of harm or loss due to using this script will be solo responsibility of user
  4. Developer bear no responsibility for any kind of loss due to using this script
 
