@@ -84,8 +84,8 @@ $Data = $Response.Content | ConvertFrom-Json
 	else
 	{
 	$time=Get-Date
-	"`nNo slots Found, Will check after 10 seconds. Current Time = {0}" -f $time 
-	Start-Sleep -s 10
+	"`nNo slots Found, Will check after 20 seconds. Current Time = {0}" -f $time 
+	Start-Sleep -s 20
 	}
 
 }
