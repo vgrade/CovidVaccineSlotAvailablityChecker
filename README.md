@@ -1,7 +1,7 @@
  # Cowin vaccine availablity checker
  Powershell script to check cowid vaccine slot availablity in india using public apis of cowin portal
 
- #How to SetUp
+ # How to SetUp
  1. Download the .ps file and edit it using any text editor.
  2. Open following url in browser to get list of states and pick your state id : https://cdn-api.co-vin.in/api/v2/admin/location/states
  3. Open following url in browser  after replacing <stateid> with your state id which you got in last step. This will give id of all districts. 
