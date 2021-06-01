@@ -13,12 +13,10 @@
  2. Open following url in browser to get list of states and pick your state id : https://cdn-api.co-vin.in/api/v2/admin/location/states
  3. Open following url in browser  after replacing <stateid> with your state id which you got in last step. This will give id of all districts. 
  4. Pick the district id's where you want to  Search for vaccine. : https://cdn-api.co-vin.in/api/v2/admin/location/districts/<stateid>
- 5. Update the district codes in $DistrictCodes variable 0n line no 21. You can provide multiple district code but load on cowin api will increase.
- 6. Update Minimum Age in MinAge variable on line no 22
- 7. Update desired vaccine name in $vaccineName variable on line no 23
- 8. Update desired vaccine dose no (eg : 1) on line no 24
- 9. Save .ps file. copy the .ps file content and open Windows PowerShell, paste the script and hit enter. 
- 10. Follow setup process mentioned in .ps file itself. Line no mentioned above may differ.
+ 5. Update the district codes in $DistrictCodes variable on line no 2. You can provide multiple district code but load on cowin api will increase.
+ 6. Update Minimum Age in #MinAge variable on line no 3
+ 7. Update desired vaccine name in $vaccineName variable on line no 5
+ 8. Update desired vaccine dose no (eg : 1) on line no 5
 
  Note
  1. Once desired slots are found, this will print the pincode and deails of centers on powershell window, start beeping loudly (provided your computer's audio output is working correctly) and open cowin portal where you have to login and book slot manually. Search for vaccine on pin codes printed on powershell screen.
