@@ -13,10 +13,10 @@
  2. Open following url in browser to get list of states and pick your state id : https://cdn-api.co-vin.in/api/v2/admin/location/states
  3. Open following url in browser  after replacing <stateid> with your state id which you got in last step. This will give id of all districts. 
  4. Pick the district id's where you want to  Search for vaccine. : https://cdn-api.co-vin.in/api/v2/admin/location/districts/<stateid>
- 5. Update the district codes in $DistrictCodes variable 0n line no 20. You can provide multiple district code but load on cowin api will increase.
- 6. Update Minimum Age in MinAge variable on line no 21
- 7. Update desired vaccine name in $vaccineName variable on line no 22
- 8. Update desired vaccine dose no (eg : 1) on line no 23
+ 5. Update the district codes in $DistrictCodes variable 0n line no 21. You can provide multiple district code but load on cowin api will increase.
+ 6. Update Minimum Age in MinAge variable on line no 22
+ 7. Update desired vaccine name in $vaccineName variable on line no 23
+ 8. Update desired vaccine dose no (eg : 1) on line no 24
  9. Save .ps file and double click to run. 
 
  Note
