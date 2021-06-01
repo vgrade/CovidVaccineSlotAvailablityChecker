@@ -1,3 +1,4 @@
+# Powershell script to check cowid vaccine slot availablity in india using public apis of cowin portal
 # Warning
 # Not for commercial Purpose, Do not abuse cowin api. Keep request under prescribed limit of 100 calls per IP Address/5 mins
 # This is just for educational and personal use purpose. Any kind of harm or loss due to using this script will be solo responsibility of user.
