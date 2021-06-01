@@ -14,9 +14,9 @@
  4. Pick the district id's where you want to  Search for vaccine. : https://cdn-api.co-vin.in/api/v2/admin/location/districts/<stateid>
  5. Update the district codes in $DistrictCodes variable on line no 2. You can provide multiple district code.
  6. Update Minimum Age in #MinAge variable on line no 3
- 7. Update desired vaccine name in $vaccineName variable on line no 5
+ 7. Update desired vaccine name in $vaccineName variable on line no 4
  8. Update desired vaccine dose no (eg : 1) on line no 5
- 9. Optionally update the $MinimumSlotes variable if you are looking for minimum slots more than 1
+ 9. Optionally update the $MinimumSlotes variable on line no 6 if you are looking for minimum slots more than 1
  9. Now save the script and open Windows powershell and paste the script in it and run. Alternatively, if running external powershell script is enabled on your computer,
  you can just double click on the powershell file
  10. Once desired slots are found, this will print the pincode and deails of centers on powershell window, start beeping loudly (provided your computer's audio output is 
