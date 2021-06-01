@@ -17,7 +17,7 @@
  6. Update Minimum Age in MinAge variable on line no 21
  7. Update desired vaccine name in $vaccineName variable on line no 22
  8. Update desired vaccine dose no (eg : 1) on line no 23
- 9. Save .ps file and double click to open. 
+ 9. Save .ps file and double click to run. 
 
  Note
- 1. This will open cowin portal and start beeping loudly where you have to login and book slot manually.
+ 1. This will start beeping loudly and open cowin portal where you have to login and book slot manually.Search for vaccine on pin codes printed on powershell screen.
