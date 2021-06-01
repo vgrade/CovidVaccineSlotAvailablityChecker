@@ -29,7 +29,7 @@ $DoseNo = "2"                 # 1/2
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 $DoseName="available_capacity_dose"+$DoseNo
 
-
+[bool]$flag1=0
 for(1)
 {
 clear
@@ -41,7 +41,7 @@ $URI1="https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDi
 $Response = Invoke-WebRequest -URI $URI1
 $Data = $Response.Content | ConvertFrom-Json
 
- [bool]$flag1=0
+ 
   Foreach($center in $Data.centers)
 	{
 		 Foreach($session in $center.sessions)
