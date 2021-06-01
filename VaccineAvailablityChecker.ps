@@ -4,7 +4,7 @@ $MinAge=45                    # 18/45
 $VaccineName = "COVISHIELD"   # COVISHIELD/COVAXIN
 $DoseNo = "1"                 # 1/2
 $MinimumSlotes = 1            # Minimum no of slots needed together at a center
-$RetryAFter = 20              # No of seconds after which it'll retry searching vaccine          
+$RetryAfter = 20              # No of seconds after which it'll retry searching vaccine          
 
 # Do not change anything after this unless you know powershell
 #Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
@@ -65,8 +65,8 @@ $Data = $Response.Content | ConvertFrom-Json
 	else
 	{
 	$time=Get-Date
-	$MessageNOSlotsFound -f $RetryAFter,$time 
-	Start-Sleep -s $RetryAFter
+	$MessageNOSlotsFound -f $RetryAfter,$time 
+	Start-Sleep -s $RetryAfter
 	}
 
 }
