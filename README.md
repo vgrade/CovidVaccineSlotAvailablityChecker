@@ -17,7 +17,8 @@
  working correctly) and open cowin portal where you have to login and book slot manually. Search for vaccine on pin codes printed on powershell screen
 
  # Disclaimer
- 1. Not for commercial usage, Do not abuse cowin api in any circumances as your ip address might get blocked
- 2. Keep requests under prescribed limit of 100 calls per IP Address/5 mins.
+ 1. Not for commercial usage, only for personal notification or helping the needy ones who are not able to book due to short lived slots.
+ 2. Please keep requests under prescribed limit of 100 calls per IP Address/5 mins. Do not reduce retry interval too much or include too many district codes otherwise your ip address might get blocked.
  3. This is just for educational and personal use purpose. Any kind of harm or loss due to using this script will be solo responsibility of user
- 4. Developer bear no responsibility for any kind of loss due to using this script 1. API responses data from this script is not exactly real time and can be cached data which can be upto 30 minutes old asper cowin api specification. For more details, please refer: https://apisetu.gov.in/public/marketplace/api/cowin/cowin-public-v2
+ 4. Developer bear no responsibility for any kind of loss due to using this script 
+ 5. API responses data from this script is not exactly real time and can be cached data which can be upto 30 minutes old asper cowin api specification. For more details, please refer: https://apisetu.gov.in/public/marketplace/api/cowin/cowin-public-v2
